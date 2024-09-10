@@ -48,3 +48,12 @@
   margin-top: 3vh;
   margin-bottom: 3vh;
 }
+/* End of the trivia content */
+
+/* Start of Button for quiz */
+.Quiz-button{
+  margin-top: 5vh;
+  background-color:rgb(79, 175, 248) ;
+  padding: 10px;
+  border: none;
+}

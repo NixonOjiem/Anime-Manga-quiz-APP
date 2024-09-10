@@ -1,4 +1,5 @@
 import './App.css';
+import ButtonForQuiz from './components/ButtonForQuiz';
 import Header from './components/Header';
 import IntroductoryContent from './components/IntroductoryContent';
 
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       < Header />
       <IntroductoryContent />
+      <ButtonForQuiz />
     </div>
   );
 }
