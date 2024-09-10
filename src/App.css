@@ -5,10 +5,9 @@
   text-align: center;
 }
 .Header{
-  height: 4vw;
+  height: vh;
   width: 100vw;
   overflow: auto;
-  position: fixed;
 }
 .Header-comp1{
   float: left;
@@ -30,4 +29,22 @@
   text-decoration: none;
   padding: 10px;
   font-size: 20px;
+}
+/* End of navigation bar edit */
+
+/* Start of introduction content */
+.Introduction{
+  width: 50vw;
+  margin-left: 25vw;
+  margin-top: 4vh;
+}
+
+.Introduction-comp2{
+  margin-top: 2vh;
+  text-align:justify;
+  align-items: center;
+}
+.My-image{
+  margin-top: 3vh;
+  margin-bottom: 3vh;
 }
