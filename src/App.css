@@ -1,3 +1,33 @@
+*{
+  margin: 0px;
+}
 .App {
   text-align: center;
+}
+.Header{
+  height: 4vw;
+  width: 100vw;
+  overflow: auto;
+  position: fixed;
+}
+.Header-comp1{
+  float: left;
+  margin-top: 5vh;
+  margin-left: 5vw;
+}
+.Header-comp2{
+  float: right;
+  display: flex;
+  flex-direction: row;
+  margin-top: 5vh;
+  margin-right: 5vw;
+}
+.Header-comp2 li{
+  list-style: none;
+}
+.Header-comp2 li a{
+  margin: 10px;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 20px;
 }
