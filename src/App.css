@@ -1,5 +1,6 @@
 *{
   margin: 0px;
+  overflow-x: hidden;
 }
 .App {
   text-align: center;
@@ -23,12 +24,19 @@
 }
 .Header-comp2 li{
   list-style: none;
+  overflow-y: hidden;
+
 }
 .Header-comp2 li a{
   margin: 10px;
   text-decoration: none;
   padding: 10px;
   font-size: 20px;
+}
+.Header-comp2 li a:hover{
+  color: grey;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
 }
 /* End of navigation bar edit */
 
