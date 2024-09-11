@@ -23,14 +23,13 @@ class QuizGenerator extends Component {
 
   fetchQuestions = async () => {
     const url = 'https://opentdb.com/api.php';
-    const config = {
-      params: {
-        amount: this.state.amount,
-        type: this.state.type
-      }
+    const params = {
+      amount: this.state.amount,
+      category: '31',
+      type: this.state.type
     };
   
-    axios.get(url, config)
+    axios.get(url, { params })
       .then(response => {
         const data = response.data;
         console.log('Response data:', data);
@@ -80,11 +79,5 @@ class QuizGenerator extends Component {
   }
 }
 
-ReactDOM.render(
-  <React.StrictMode>
-    <QuizGenerator />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
 export default QuizGenerator;
