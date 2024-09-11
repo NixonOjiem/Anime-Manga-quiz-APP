@@ -9,12 +9,16 @@ class QuizGenerator extends Component {
       questions: [],
       loading: true,
       amount: 12,
-      type: 'boolean'
+      type: 'boolean',
+      fetched: false
     };
   }
 
   componentDidMount() {
-    this.fetchQuestions();
+    if (!this.state.fetched) {
+      this.fetchQuestions();
+      this.setState({ fetched: true });
+    }
   }
 
   fetchQuestions = async () => {
@@ -25,7 +29,7 @@ class QuizGenerator extends Component {
         type: this.state.type
       }
     };
-
+  
     axios.get(url, config)
       .then(response => {
         const data = response.data;
@@ -41,6 +45,9 @@ class QuizGenerator extends Component {
       })
       .catch(error => {
         console.error(error);
+      })
+      .finally(() => {
+        this.setState({ loading: false }); // Set loading to false regardless of the request outcome
       });
   };
 
@@ -48,17 +55,23 @@ class QuizGenerator extends Component {
     if (this.state.loading) {
       return <div>Loading...</div>;
     }
-  
+
     console.log('Questions:', this.state.questions);
     return (
       <div>
         {this.state.questions.map((question, index) => {
-          console.log('Question:', question); // Add this line
+          console.log('Question:', question);
           return (
             <div key={index}>
               <p>{question.question}</p>
               <p>Answer: {question.correct_answer}</p>
-              <p>Incorrect answers: {question.incorrect_answers.join(', ')}</p>
+              <p>Incorrect answers:
+                <ul>
+                  {question.incorrect_answers.map(answer => (
+                    <li>{answer}</li>
+                  ))}
+                </ul>
+              </p>
             </div>
           );
         })}
