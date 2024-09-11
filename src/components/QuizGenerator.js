@@ -2,69 +2,74 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
 
-
-
 class QuizGenerator extends Component {
   constructor() {
     super();
     this.state = {
-      categories: [],
+      questions: [],
       loading: true,
+      amount: 12,
+      type: 'boolean'
     };
   }
 
   componentDidMount() {
-    this.fetchCategories();
+    this.fetchQuestions();
   }
 
-  fetchCategories = async () => {
-    const url = 'https://trivia-questions-api.p.rapidapi.com/fetchCategories';
+  fetchQuestions = async () => {
+    const url = 'https://opentdb.com/api.php';
     const config = {
-      headers: {
-        'x-rapidapi-key': '29c602aad3msh0494b6c92477117p1434dajsn2e6329db8deb',
-        'x-rapidapi-host': 'trivia-questions-api.p.rapidapi.com'
+      params: {
+        amount: this.state.amount,
+        type: this.state.type
       }
     };
-  
+
     axios.get(url, config)
       .then(response => {
         const data = response.data;
         console.log('Response data:', data);
-        if (data && data.triviaCategories) {
+        if (data && data.results) {
           this.setState({
-            categories: data.triviaCategories,
+            questions: data.results,
             loading: false,
           });
         } else {
-          console.error('Error: triviaCategories property not found in response data');
+          console.error('Error: results property not found in response data');
         }
       })
       .catch(error => {
         console.error(error);
       });
   };
+
   render() {
     if (this.state.loading) {
       return <div>Loading...</div>;
     }
-
+  
+    console.log('Questions:', this.state.questions);
     return (
-    <div>
-    {this.state.categories.map((category, index) => (
-      <div key={index}>
-        {category.name ? <h2>{category.name}</h2> : <h2>Unknown category</h2>}
+      <div>
+        {this.state.questions.map((question, index) => {
+          console.log('Question:', question); // Add this line
+          return (
+            <div key={index}>
+              <p>{question.question}</p>
+              <p>Answer: {question.correct_answer}</p>
+              <p>Incorrect answers: {question.incorrect_answers.join(', ')}</p>
+            </div>
+          );
+        })}
       </div>
-    ))}
-  </div>
     );
   }
 }
 
-const quizGenerator = new QuizGenerator();
-
 ReactDOM.render(
   <React.StrictMode>
-    <quizGenerator />
+    <QuizGenerator />
   </React.StrictMode>,
   document.getElementById('root')
 );
