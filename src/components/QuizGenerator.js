@@ -2,18 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
 
-module.exports = {
-  resolve: {
-    fallback: {
-      http: require.resolve("stream-http"),
-      https: require.resolve("https-browserify"),
-      net: false,
-      tls: false,
-      crypto: false,
-      dns: false,
-    },
-  },
-};
+
 
 class QuizGenerator extends Component {
   constructor() {
@@ -36,34 +25,37 @@ class QuizGenerator extends Component {
         'x-rapidapi-host': 'trivia-questions-api.p.rapidapi.com'
       }
     };
-
+  
     axios.get(url, config)
       .then(response => {
         const data = response.data;
-        console.log(data);
-        this.setState({
-          categories: data,
-          loading: false,
-        });
+        console.log('Response data:', data);
+        if (data && data.triviaCategories) {
+          this.setState({
+            categories: data.triviaCategories,
+            loading: false,
+          });
+        } else {
+          console.error('Error: triviaCategories property not found in response data');
+        }
       })
       .catch(error => {
         console.error(error);
       });
   };
-
   render() {
     if (this.state.loading) {
       return <div>Loading...</div>;
     }
 
     return (
-      <div>
-        {this.state.categories.map((category, index) => (
-          <div key={index}>
-            <h2>{category}</h2>
-          </div>
-        ))}
+    <div>
+    {this.state.categories.map((category, index) => (
+      <div key={index}>
+        {category.name ? <h2>{category.name}</h2> : <h2>Unknown category</h2>}
       </div>
+    ))}
+  </div>
     );
   }
 }
