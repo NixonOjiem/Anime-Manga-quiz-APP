@@ -7,7 +7,7 @@ function QuizScreen() {
     <div>
         <Header />
         <QuizGenerator />  
-        /*this works*/
+        
     </div>
   )
 }
