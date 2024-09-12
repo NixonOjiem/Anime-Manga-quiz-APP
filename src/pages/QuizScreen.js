@@ -6,7 +6,8 @@ function QuizScreen() {
   return (
     <div>
         <Header />
-        {/* <QuizGenerator /> */}//this works
+        {/* <QuizGenerator /> */} 
+        /*this works*/
     </div>
   )
 }
