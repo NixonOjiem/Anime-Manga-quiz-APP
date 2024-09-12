@@ -10,11 +10,13 @@ import QuizGenerator from './components/QuizGenerator';
 function App() {
   return (
     <div className="App">
-      <Header />
-      <IntroductoryContent />
-      <ButtonForQuiz /> 
-      <QuizGenerator />
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<StartScreen />} />
+        </Routes>
+      </BrowserRouter>
     </div>
+
   );
 }
 

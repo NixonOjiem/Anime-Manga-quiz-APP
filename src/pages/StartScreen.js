@@ -1,8 +1,13 @@
-import React from 'react'
+import React from 'react';
+import Header from '../components/Header';
+import IntroductoryContent from '../components/IntroductoryContent';
 
 function StartScreen() {
   return (
-    <div>StartScreen</div>
+    <div>
+        <Header />
+        <IntroductoryContent />
+    </div>
   )
 }
 
