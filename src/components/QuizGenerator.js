@@ -58,11 +58,12 @@ class QuizGenerator extends Component {
     console.log('Questions:', this.state.questions);
     return (
       <div>
+        <h3 className='Questions-Heading'>Questions</h3>
         {this.state.questions.map((question, index) => {
           console.log('Question:', question);
           return (
             <div key={index}>
-              <p>{question.question}</p>
+              <p className='Question'>{question.question}</p>
               <p>Answer: {question.correct_answer}</p>
               <p>Incorrect answers:
                 <ul>

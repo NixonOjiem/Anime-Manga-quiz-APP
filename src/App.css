@@ -89,3 +89,14 @@
   background-image: linear-gradient(to right, rgb(79, 175, 248), rgb(238, 55, 76)); /* Gradient from left to right */
   background-color: transparent; /* Set background color to transparent to show the gradient */
 }
+
+/* End of button  */
+
+/* beginning of quiz questions */
+.Questions-Heading{
+  margin-top: 5vh;
+  margin-bottom: 2.5vh;
+}
+.Question{
+  margin-top: 2.5vh;
+}
