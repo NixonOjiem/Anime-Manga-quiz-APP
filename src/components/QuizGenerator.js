@@ -12,7 +12,9 @@ class QuizGenerator extends Component {
       type: 'boolean',
       fetched: false,
       userAnswers: {}, // new state to store user answers
-      correctAnswers: {} // new state to store correct answers
+      correctAnswers: {}, // new state to store correct answers
+      showErrorPopup: false, // new state to manage pop-up visibility
+      score: null // new state to store the score
     };
   }
 
@@ -62,6 +64,40 @@ class QuizGenerator extends Component {
     }));
   };
 
+  handleSubmit = () => {
+    const userAnswers = this.state.userAnswers;
+    const correctAnswers = this.state.correctAnswers;
+    const score = Object.keys(userAnswers).reduce((acc, index) => {
+      const userAnswerNormalized = userAnswers[index].toLowerCase();
+      const correctAnswerNormalized = correctAnswers[index].toLowerCase();
+      if (userAnswerNormalized === correctAnswerNormalized) {
+        acc++;
+      }
+      console.log('User answers:', userAnswers);
+      return acc;
+    }, 0);
+  
+    // Check if all answers are either True or False (case-insensitive)
+    const allAnswersValid = Object.values(userAnswers).every(answer => {
+      const normalizedAnswer = answer.toLowerCase();
+      return normalizedAnswer === 'true' || normalizedAnswer === 'false';
+    });
+  
+    if (allAnswersValid) {
+      this.setState({ score });
+      console.log(`User scored ${score} out of ${this.state.amount}`);
+      // You can also save the user's results to a database or local storage here
+    } else {
+      this.setState({ showErrorPopup: true });
+      console.error('Error: Not all answers are either True or False');
+    }
+  }
+  
+
+  closePopup = () => {
+    this.setState({ showErrorPopup: false });
+  }
+  
   render() {
     if (this.state.loading) {
       return <div>Loading...</div>;
@@ -86,6 +122,23 @@ class QuizGenerator extends Component {
             </div>
           );
         })}
+        <button onClick={this.handleSubmit}>Submit Answers</button>
+        
+        {this.state.score !== null && (
+          <div className='score'>
+            <h2>Your Score: {this.state.score} out of {this.state.amount}</h2>
+          </div>
+        )}
+        
+        {this.state.showErrorPopup && (
+          <div className='popup'>
+            <div className='popup-inner'>
+              <h2>Error</h2>
+              <p>Not all answers are either True or False.</p>
+              <button onClick={this.closePopup}>Close</button>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
