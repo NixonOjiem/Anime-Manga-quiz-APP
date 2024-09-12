@@ -100,3 +100,7 @@
 .Question{
   margin-top: 2.5vh;
 }
+.User-Answer-text{
+  align-items: center;
+  text-align: center;
+}

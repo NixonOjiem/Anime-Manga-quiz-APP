@@ -10,7 +10,9 @@ class QuizGenerator extends Component {
       loading: true,
       amount: 12,
       type: 'boolean',
-      fetched: false
+      fetched: false,
+      userAnswers: {}, // new state to store user answers
+      correctAnswers: {} // new state to store correct answers
     };
   }
 
@@ -28,7 +30,7 @@ class QuizGenerator extends Component {
       category: '31',
       type: this.state.type
     };
-  
+
     axios.get(url, { params })
       .then(response => {
         const data = response.data;
@@ -36,6 +38,10 @@ class QuizGenerator extends Component {
         if (data && data.results) {
           this.setState({
             questions: data.results,
+            correctAnswers: data.results.reduce((acc, question, index) => {
+              acc[index] = question.correct_answer;
+              return acc;
+            }, {}),
             loading: false,
           });
         } else {
@@ -48,6 +54,12 @@ class QuizGenerator extends Component {
       .finally(() => {
         this.setState({ loading: false }); // Set loading to false regardless of the request outcome
       });
+  };
+
+  handleAnswerChange = (index, answer) => {
+    this.setState(prevState => ({
+      userAnswers: { ...prevState.userAnswers, [index]: answer }
+    }));
   };
 
   render() {
@@ -64,14 +76,13 @@ class QuizGenerator extends Component {
           return (
             <div key={index}>
               <p className='Question'>{question.question}</p>
-              <p>Answer: {question.correct_answer}</p>
-              <p>Incorrect answers:
-                <ul>
-                  {question.incorrect_answers.map(answer => (
-                    <li>{answer}</li>
-                  ))}
-                </ul>
-              </p>
+              <input
+                type='text'
+                value={this.state.userAnswers[index] || ''}
+                onChange={e => this.handleAnswerChange(index, e.target.value)}
+                placeholder='True or False'
+                className='User-Answer-text'
+              />
             </div>
           );
         })}
@@ -79,6 +90,5 @@ class QuizGenerator extends Component {
     );
   }
 }
-
 
 export default QuizGenerator;
