@@ -1,12 +1,14 @@
 import React from 'react';
 import Header from '../components/Header';
+import ResultsComponent from '../components/ResultsComponent';
 
-function Results() {
+const Results = () => {
   return (
     <div>
-        <Header />
+      <Header />
+      <ResultsComponent />
     </div>
-  )
-}
+  );
+};
 
-export default Results
+export default Results;
