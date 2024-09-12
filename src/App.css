@@ -10,10 +10,14 @@
   width: 100vw;
   overflow: auto;
 }
+
 .Header-comp1{
   float: left;
   margin-top: 5vh;
   margin-left: 5vw;
+  background-clip: text;
+  color: transparent;
+  cursor: pointer;
 }
 .Header-comp2{
   float: right;
@@ -34,9 +38,25 @@
   font-size: 20px;
 }
 .Header-comp2 li a:hover{
-  color: grey;
-  transition-duration: 0.4s;
+  background-image: linear-gradient(to right, rgb(79, 175, 248), rgb(238, 55, 76)); /* Gradient from left to right */
+  background-clip: text;
+  color: transparent;
+  transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
+  cursor: pointer;
+}
+.Link {
+  margin: 10px;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 20px;
+  color: black;
+  text-decoration: none;
+}
+.Heading{
+  background-image: linear-gradient(to right, rgb(79, 175, 248), rgb(238, 55, 76)); /* Gradient from left to right */
+  background-clip: text;
+  color: transparent;
 }
 /* End of navigation bar edit */
 
@@ -64,4 +84,8 @@
   background-color:rgb(79, 175, 248) ;
   padding: 10px;
   border: none;
+}
+.Quiz-button:hover {
+  background-image: linear-gradient(to right, rgb(79, 175, 248), rgb(238, 55, 76)); /* Gradient from left to right */
+  background-color: transparent; /* Set background color to transparent to show the gradient */
 }
