@@ -13,6 +13,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route index element={<StartScreen />} />
+          <Route path="/Home" element={<StartScreen />} />
+          <Route path='/Quiz' element={<QuizScreen />} /> 
         </Routes>
       </BrowserRouter>
     </div>
