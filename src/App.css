@@ -193,9 +193,7 @@
   .Header-comp2 li:not(:last-child) {
     display: none;
   }
-  .Header-comp2 {
-    margin-top: 0px;
-  }
+  
   .Header-comp1 {
     text-align: center;
     align-items: center;
@@ -208,11 +206,17 @@
     margin-left: auto;
     margin-top: 0px;
   }
+  .Header-comp2 {
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    float: none;
+  }
 }
 @media screen and (max-width: 827px) {
   .Header.responsive { position: relative; }
   .Header.responsive .icon {
-    position: absolute;
+    position: static; /* Change from absolute to static */
     right: 0;
     top: 0;
   }
@@ -227,3 +231,5 @@
     display: none;
   }
 }
+/*experiment*/
+
