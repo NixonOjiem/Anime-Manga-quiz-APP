@@ -1,11 +1,13 @@
-import React from 'react'
-import Header from '../components/Header'
+import React from 'react';
+import Header from '../components/Header';
+import OpenEndedQuizGenerator from '../components/OpenEndedQuizGenerator';
+
 
 function OpenEndedQuiz() {
   return (
     <div>
         <Header />
-        <p>Questions will appear here shortly</p>
+        <OpenEndedQuizGenerator />
     </div>
   )
 }

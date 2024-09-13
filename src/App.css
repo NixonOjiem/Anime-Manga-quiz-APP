@@ -38,6 +38,7 @@
   text-decoration: none;
   padding: 10px;
   font-size: 20px;
+  color: black;
 }
 .Header-comp2 li a:hover{
   background-image: linear-gradient(to right, rgb(79, 175, 248), rgb(238, 55, 76)); /* Gradient from left to right */
@@ -134,4 +135,8 @@
 .Close-button:hover{
   background-image: linear-gradient(to right, rgb(79, 175, 248), rgb(238, 55, 76)); /* Gradient from left to right */
   background-color: transparent; /* Set background color to transparent to show the gradient */
+}
+/* Open ended questions */
+.Answer{
+  color: green;
 }

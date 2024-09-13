@@ -9,8 +9,8 @@ function Header() {
             <li><Link to="/quiz"className='Link'> Bolean Quiz</Link></li>
             <li><Link to="/open-quiz" className='Link'>Open Quiz</Link></li>
             <li><Link to="/Results" className='Link'>Quiz Results</Link></li>
-            <li><a>Portfolio</a></li>
-            <li><a>Github</a></li>
+            <li><a href='https://myportfolio-cde82.web.app/'>Portfolio</a></li>
+            <li><a href=''>Github</a></li>
         </ul>
     </div>
   )
