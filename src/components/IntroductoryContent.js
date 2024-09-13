@@ -1,5 +1,5 @@
 import React from 'react'
-import picture from "../images/hunter-x-hunter-dub.png"
+import picture from "../images/Anime.png"
 
 function IntroductoryContent() {
   return (

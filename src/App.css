@@ -6,9 +6,11 @@
   text-align: center;
 }
 .Header{
-  height: vh;
+  height: 9vh;
   width: 100vw;
   overflow: auto;
+  position: sticky;
+  top:0;
 }
 
 .Header-comp1{
