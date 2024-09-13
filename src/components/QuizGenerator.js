@@ -32,7 +32,7 @@ const QuizGenerator = () => {
     try {
       const response = await axios.get(url, { params });
       const data = response.data;
-      console.log('Response data:', data);
+      // console.log('Response data:', data);
       if (data && data.results) {
         setQuestions(data.results);
         setCorrectAnswers(data.results.reduce((acc, question, index) => {
@@ -93,12 +93,12 @@ const QuizGenerator = () => {
     return <div>Loading...</div>;
   }
 
-  console.log('Questions:', questions);
+  // console.log('Questions:', questions);
   return (
     <div>
       <h3 className='Questions-Heading'>Questions</h3>
       {questions.map((question, index) => {
-        console.log('Question:', question);
+        // console.log('Question:', question);
         return (
           <div key={index} className='Container-Question'>
             <p className='Question'><b>{index+1}.</b> {question.question}</p>

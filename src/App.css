@@ -74,6 +74,7 @@
   margin-top: 2vh;
   text-align:justify;
   align-items: center;
+  margin-bottom: 8vh;
 }
 .My-image{
   margin-top: 3vh;
@@ -134,6 +135,7 @@
   background-color:rgb(79, 175, 248) ;
   padding: 10px;
   border: none;
+  margin-bottom: 8vh;
 }
 .Submit-Button:hover{
   background-image: linear-gradient(to right, rgb(79, 175, 248), rgb(238, 55, 76)); /* Gradient from left to right */
@@ -155,8 +157,23 @@
   height: auto;
   margin-left: 15vw;
 }
-.CheckBox{
+.CheckBox {
+  /* Add some space between the checkbox and the question */
+  margin-right: 10px;
 
+  /* Customize the checkbox appearance */
+  width: 20px;
+  height: 20px;
+  accent-color: #007bff; /* blue color for the checked state */
+  border: 1px solid #ddd; /* light gray border */
+  border-radius: 50%; /* rounded corners */
+  cursor: pointer; /* change the cursor shape to a pointing hand */
+}
+
+.CheckBox:checked {
+  /* Customize the checked state appearance */
+  background-color: #007bff; /* blue color for the checked state */
+  border-color: #007bff; /* blue border for the checked state */
 }
 .Question-Open{
   margin-top: 5vh;
