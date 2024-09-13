@@ -11,7 +11,7 @@ function IntroductoryContent() {
     </p>
         <img src= {picture}className="My-image"></img>
         <br />
-        <h2 className='Introduction-comp1'>Why Our Anime Quizzes?</h2>
+    <h2 className='Introduction-comp1'>Why Our Anime Quizzes?</h2>
     <p className='Introduction-comp2'>
       <ol>
         <li> <b>Engaging Content:</b> Our quizzes cover a wide range of anime genres and series, from classics to the latest hits.
