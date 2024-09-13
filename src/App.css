@@ -6,7 +6,7 @@
   text-align: center;
 }
 .Header{
-  height: 9vh;
+  height: auto;
   width: 100vw;
   overflow: auto;
   position: sticky;
@@ -37,7 +37,7 @@
   margin: 10px;
   text-decoration: none;
   padding: 10px;
-  font-size: 20px;
+  font-size: 17px;
   color: black;
 }
 .Header-comp2 li a:hover{
@@ -183,4 +183,47 @@
   align-items: left;
   text-align: left;
 
+}
+/* begining of optimizing the webpage for mobile devices */
+@media screen and (max-width: 827px) {
+  .Header {
+    align-items: center;
+    text-align: center;
+  }
+  .Header-comp2 li:not(:last-child) {
+    display: none;
+  }
+  .Header-comp2 {
+    margin-top: 0px;
+  }
+  .Header-comp1 {
+    text-align: center;
+    align-items: center;
+    float: none;
+    margin-top: 1px !important;
+  }
+  .icon {
+    float: right;
+    display: block !important;
+    margin-left: auto;
+    margin-top: 0px;
+  }
+}
+@media screen and (max-width: 827px) {
+  .Header.responsive { position: relative; }
+  .Header.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .Header.responsive .Header-comp2 li {
+    display: block;
+    text-align: center;
+    float: none;
+  }
+}
+@media screen and (min-width: 828px) {
+  .icon {
+    display: none;
+  }
 }
