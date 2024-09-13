@@ -100,8 +100,8 @@ const QuizGenerator = () => {
       {questions.map((question, index) => {
         console.log('Question:', question);
         return (
-          <div key={index}>
-            <p className='Question'>{question.question}</p>
+          <div key={index} className='Container-Question'>
+            <p className='Question'><b>{index+1}.</b> {question.question}</p>
             <input
               type='text'
               value={userAnswers[index] || ''}

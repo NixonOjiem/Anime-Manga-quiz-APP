@@ -10,7 +10,7 @@ function Header() {
             <li><Link to="/open-quiz" className='Link'>Open Quiz</Link></li>
             <li><Link to="/Results" className='Link'>Quiz Results</Link></li>
             <li><a href='https://myportfolio-cde82.web.app/'>Portfolio</a></li>
-            <li><a href=''>Github</a></li>
+            <li><a href='https://github.com/NixonOjiem'>Github</a></li>
         </ul>
     </div>
   )

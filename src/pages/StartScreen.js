@@ -8,7 +8,7 @@ function StartScreen() {
     <div>
         <Header />
         <IntroductoryContent />
-        <ButtonForQuiz />
+        {/* <ButtonForQuiz /> */}
     </div>
   )
 }

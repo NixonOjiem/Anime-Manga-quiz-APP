@@ -77,15 +77,17 @@ function OpenEndedQuizGenerator() {
 
   return (
     <div>
+      <h3 className='Questions-Heading'>Questions</h3>
       {questions.map((question, index) => (
-        <div key={index}>
-          <p>{question.question}</p>
-          <ul>
+        <div key={index} className='Container-OpenEdnd-Questions'>
+          <p className='Question-Open'><b>{index +1}.</b>{question.question}</p>
+          <ul className='Multiple-Choice'>
             {question.incorrect_answers.map((answer, i) => (
               <li key={i}>
                 <input
                   type="checkbox"
                   checked={userAnswers[index] === answer}
+                  className='CheckBox'
                   onChange={() => handleAnswerChange(index, answer)}
                 />
                 {answer}
@@ -94,8 +96,8 @@ function OpenEndedQuizGenerator() {
           </ul>
         </div>
       ))}
-      <button onClick={handleSubmit}>Submit</button>
-      <p>Your score is {score} out of {questions.length} {userScore}</p>
+      <button onClick={handleSubmit} className='Submit-Button'>Submit</button>
+      {/* <p>Your score is {score} out of {questions.length} {userScore}</p> */}
       
     </div>
   );

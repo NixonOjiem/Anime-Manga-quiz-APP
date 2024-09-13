@@ -95,25 +95,38 @@
 
 /* End of button  */
 
-/* beginning of quiz questions */
+/* beginning of True or False quiz questions */
 .Questions-Heading{
   margin-top: 5vh;
   margin-bottom: 2.5vh;
+  text-align: left;
+  margin-left: 15vw;
+}
+.Container-Question{
+  width: 70vw;
+  margin-left: 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .Question{
-  margin-top: 2.5vh;
+  margin-top: 5vh;
+  text-align: justify;
+  margin-bottom: 10px
 }
 .User-Answer-text {
-  align-items: center;
+  align-items: left;
   text-align: center;
   padding: 10px;
   font-family: Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   border: 0;
+  margin-left: 0;
   border-bottom: 5px solid; /* Adjust the thickness as needed */
   border-image: linear-gradient(to right, red, blue) 1;
   outline: none;
+
 }
 
 .Submit-Button{
@@ -137,6 +150,20 @@
   background-color: transparent; /* Set background color to transparent to show the gradient */
 }
 /* Open ended questions */
-.Answer{
-  color: green;
+.Container-OpenEdnd-Questions{
+  width: 70vw;
+  height: auto;
+  margin-left: 15vw;
+}
+.CheckBox{
+
+}
+.Question-Open{
+  margin-top: 5vh;
+  text-align: justify;
+}
+.Multiple-Choice{
+  align-items: left;
+  text-align: left;
+
 }
