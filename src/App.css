@@ -100,20 +100,36 @@
 .Question{
   margin-top: 2.5vh;
 }
-.User-Answer-text{
+.User-Answer-text {
   align-items: center;
   text-align: center;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  border: 0;
+  border-bottom: 5px solid; /* Adjust the thickness as needed */
+  border-image: linear-gradient(to right, red, blue) 1;
+  outline: none;
 }
-/* Start of edditing the Quiz Generator */
+
 .Submit-Button{
   margin-top: 5vh;
   background-color:rgb(79, 175, 248) ;
   padding: 10px;
   border: none;
 }
+.Submit-Button:hover{
+  background-image: linear-gradient(to right, rgb(79, 175, 248), rgb(238, 55, 76)); /* Gradient from left to right */
+  background-color: transparent; /* Set background color to transparent to show the gradient */
+}
 .Close-Button{
   margin-top: 5vh;
   background-color:rgb(79, 175, 248) ;
   padding: 10px;
   border: none;
+}
+.Close-button:hover{
+  background-image: linear-gradient(to right, rgb(79, 175, 248), rgb(238, 55, 76)); /* Gradient from left to right */
+  background-color: transparent; /* Set background color to transparent to show the gradient */
 }

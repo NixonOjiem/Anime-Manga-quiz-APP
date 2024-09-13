@@ -120,7 +120,7 @@ const QuizGenerator = () => {
         </div>
       )}
       
-      {showErrorPopup && (
+      {/* {showErrorPopup && (
         <div className='popup'>
           <div className='popup-inner'>
             <h2>Error</h2>
@@ -128,7 +128,8 @@ const QuizGenerator = () => {
             <button onClick={closePopup} className='Close-Button'>Close</button>
           </div>
         </div>
-      )}
+      )} */}
+      {showErrorPopup && alert("Error: All fields should either be true or false")}
     </div>
   );
 };
