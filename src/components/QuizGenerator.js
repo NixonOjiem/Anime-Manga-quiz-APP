@@ -112,7 +112,7 @@ const QuizGenerator = () => {
           </div>
         );
       })}
-      <button onClick={handleSubmit}>Submit Answers</button>
+      <button onClick={handleSubmit} className='Submit-Button'>Submit Answers</button>
       
       {score !== null && (
         <div className='score'>
@@ -125,7 +125,7 @@ const QuizGenerator = () => {
           <div className='popup-inner'>
             <h2>Error</h2>
             <p>Not all answers are either True or False.</p>
-            <button onClick={closePopup}>Close</button>
+            <button onClick={closePopup} className='Close-Button'>Close</button>
           </div>
         </div>
       )}

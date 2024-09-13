@@ -104,3 +104,16 @@
   align-items: center;
   text-align: center;
 }
+/* Start of edditing the Quiz Generator */
+.Submit-Button{
+  margin-top: 5vh;
+  background-color:rgb(79, 175, 248) ;
+  padding: 10px;
+  border: none;
+}
+.Close-Button{
+  margin-top: 5vh;
+  background-color:rgb(79, 175, 248) ;
+  padding: 10px;
+  border: none;
+}
