@@ -78,6 +78,7 @@ function OpenEndedQuizGenerator() {
   return (
     <div>
       <h3 className='Questions-Heading'>Questions</h3>
+      <p className='Joke'>Feel free to use your cursed techniques, Nen abilities, chakra, bankai, breathing, and noble phantasm. &#x1F600;</p>
       {questions.map((question, index) => (
         <div key={index} className='Container-OpenEdnd-Questions'>
           <p className='Question-Open'><b>{index +1}.</b>{question.question}</p>

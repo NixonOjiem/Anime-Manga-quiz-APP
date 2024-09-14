@@ -22,16 +22,17 @@ function Header() {
     <div className='Header' id="myTopnav">
       <h2 className='Header-comp1'><Link to="/Home" className='Heading'>A Quiz App</Link></h2>
       <ul className='Header-comp2'>
+      <li>
+          <a href="javascript:void(0);" className="icon" onClick={myFunction}>
+            <i className="fa fa-bars"></i>
+          </a>
+        </li>
         <li><Link to="/quiz" className='Link'>Boolean Quiz</Link></li>
         <li><Link to="/open-quiz" className='Link'>Open Quiz</Link></li>
         <li><Link to="/Results" className='Link'>Quiz Results</Link></li>
         <li><a href='https://myportfolio-cde82.web.app/'>Portfolio</a></li>
         <li><a href='https://github.com/NixonOjiem'>Github</a></li>
-        <li>
-          <a href="javascript:void(0);" className="icon" onClick={myFunction}>
-            <i className="fa fa-bars"></i>
-          </a>
-        </li>
+        
       </ul>
     </div>
   );

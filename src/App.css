@@ -76,6 +76,11 @@
   align-items: center;
   margin-bottom: 8vh;
 }
+.Joke{
+  margin-left: 15vw;
+  text-align: left;
+
+}
 .My-image{
   margin-top: 3vh;
   margin-bottom: 3vh;
@@ -190,10 +195,10 @@
     align-items: center;
     text-align: center;
   }
-  .Header-comp2 li:not(:last-child) {
+  .Header-comp2 li:not(:first-child) {
     display: none;
   }
-  
+
   .Header-comp1 {
     text-align: center;
     align-items: center;
@@ -211,6 +216,33 @@
     display: flex;
     flex-direction: column;
     float: none;
+    padding-left: 0px;
+    margin-right: 0px;
+    overflow-y: hidden;
+    text-align: center;
+  }
+
+  .Introduction{
+    margin: 0px;
+    width: 100vw;
+  }
+  .Introduction-comp1 {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .Introduction-comp2{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 3vh;
+  }
+  .My-image {
+    margin-top: 0vh;
+    width: 100%;
+    height: auto;
+    max-width: 100%; /* Ensures the image doesn't exceed the container's width */
+  }
+  .Introduction-comp2 ol{
+    padding: 0px;
   }
 }
 @media screen and (max-width: 827px) {
@@ -232,4 +264,66 @@
   }
 }
 /*experiment*/
+
+
+
+/* Ensure the icon is always visible */
+
+
+/* Keyframes for the fade-in and slide-up animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* State when the responsive class is added */
+@media screen and (max-width: 827px) {
+  .Header.responsive { position: relative; }
+  .Header.responsive .icon {
+    position: static; /* Change from absolute to static */
+    right: 0;
+    top: 0;
+    opacity: 1; /* Ensure the icon remains visible */
+  }
+  .Header.responsive .Header-comp2 li {
+    display: block;
+    text-align: center;
+    float: none;
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 0.5s ease forwards;
+  }
+  /* Add delay to each list item */
+  .Header.responsive .Header-comp2 li:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .Header.responsive .Header-comp2 li:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .Header.responsive .Header-comp2 li:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  .Header.responsive .Header-comp2 li:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  .Header.responsive .Header-comp2 li:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+  .Header.responsive .Header-comp2 li:nth-child(6) {
+    animation-delay: 0.6s;
+  }
+}
+
+/* Ensure the icon is always visible on small screens */
+@media screen and (max-width: 827px) {
+  .icon {
+    opacity: 1; /* Ensure the icon is visible */
+  }
+}
 
